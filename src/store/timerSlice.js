@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const intialTimerState = { time: 1 };
 
+// for managing the time
 const timerSlice = createSlice({
     name: "timer",
     initialState: intialTimerState,

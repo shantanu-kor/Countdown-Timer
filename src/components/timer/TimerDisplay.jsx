@@ -1,5 +1,6 @@
 import React from "react";
 
+// time is displayed through this component
 const TimerDisplay = ({ time, timeUp }) => {
   return (
     <div className="text-center md:text-4xl text-2xl md:m-14 m-7 mx-auto bg-blue-900 text-white md:p-4 p-2 rounded-md">

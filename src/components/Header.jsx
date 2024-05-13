@@ -1,5 +1,6 @@
 import React from "react";
 
+// the header of the home page
 const Header = () => {
   return (
     <header>

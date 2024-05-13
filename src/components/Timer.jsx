@@ -5,17 +5,23 @@ import { useSelector } from "react-redux";
 import { Progress } from "flowbite-react";
 
 const Timer = () => {
+  // get the time from redux
   const time = useSelector((state) => state.timer.time);
+  
+  // handle the value of displayed time
   const [timerTime, setTimerTime] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
   });
+
+  // handle the values of timeup, running setInterval's id, and pause state
   const [timeUp, setTimeUp] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
   const [isPause, setIsPause] = useState(false);
 
+  // set the value of time from seconds to days, hours, minutes, and seconds format
   const setTimerValue = (time) => {
     const days = Math.floor(time / (60 * 60 * 24));
     const hours = Math.floor((time - days * 60 * 60 * 24) / (60 * 60));
@@ -26,6 +32,7 @@ const Timer = () => {
     setTimerTime({ days, hours, minutes, seconds });
   };
 
+  // run every time the value of countdown time changes
   useEffect(() => {
     // console.log(time)
     setTimerValue(time);
@@ -34,6 +41,7 @@ const Timer = () => {
     setTimeUp(false);
   }, [time]);
 
+  // stop the countdown after timeup
   useEffect(() => {
     if (timeUp) {
       //   console.log("cleared >>>", intervalId);
@@ -41,6 +49,7 @@ const Timer = () => {
     }
   }, [timeUp]);
 
+  // start the countdown if there is time left or not paused
   useEffect(() => {
     // console.log(timeUp, isPause);
     if (!timeUp && !isPause) {
@@ -71,6 +80,7 @@ const Timer = () => {
     }
   }, [timeUp, isPause, time]);
 
+  // reset the timer in paused state
   const resetTimer = () => {
     // console.log(intervalId); 
     setTimerValue(time);
@@ -79,10 +89,12 @@ const Timer = () => {
     setIsPause(true);
   };
 
+  // start the timer from paused state
   const playHandler = () => {
     setIsPause(false);
   };
 
+  // pause the timer from play state
   const pauseHandler = () => {
     clearInterval(intervalId);
     setIsPause(true);

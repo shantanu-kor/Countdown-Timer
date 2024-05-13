@@ -14,7 +14,9 @@ const TimerActions = ({
 }) => {
   const dispatch = useDispatch();
 
+  // handle weather to show the time change form
   const [showTimeChanger, setShowTimeChanger] = useState(false);
+  // manage the state of days, hours, minutes, and seconds with initial values
   const [days, setDays] = useState(Math.floor(time / (60 * 60 * 24)));
   const [hours, setHours] = useState(
     Math.floor((time - days * 60 * 60 * 24) / (60 * 60))
@@ -26,15 +28,18 @@ const TimerActions = ({
     time - days * 60 * 60 * 24 - hours * 60 * 60 - minutes * 60
   );
 
+  // ref objects
   const daysRef = useRef();
   const hoursRef = useRef();
   const minutesRef = useRef();
   const secondsRef = useRef();
 
+  // handles the button response to show and hide the form
   const changeTimeLimitHandler = () => {
     setShowTimeChanger((prevState) => !prevState);
   };
 
+  // handles the changes for days, hours, minutes, seconds in the form
   const daysChangeHandler = () => {
     setDays(daysRef.current.value);
   };
@@ -48,6 +53,7 @@ const TimerActions = ({
     setSeconds(secondsRef.current.value);
   };
 
+  // handles the submission of the form to change the timer time
   const setTimeHandler = (event) => {
     event.preventDefault();
     const time =
@@ -55,6 +61,7 @@ const TimerActions = ({
       Number(hours * 60 * 60) +
       Number(minutes * 60) +
       Number(seconds);
+    // set the new time
     dispatch(timerActions.setTime(time));
     setShowTimeChanger(false);
   };
