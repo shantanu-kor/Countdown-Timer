@@ -64,14 +64,14 @@ const TimerActions = ({
       <div>
         {isPause ? (
           <button
-            className="md:text-5xl text-2xl md:m-4 m-2 p-1 bg-green-700 text-white rounded"
+            className="md:text-4xl text-2xl md:m-4 m-2 p-1 bg-green-700 text-white rounded"
             onClick={playHandler}
           >
             <FaPlay />
           </button>
         ) : (
           <button
-            className="md:text-5xl text-2xl md:m-4 m-2 p-1 bg-red-700 text-white rounded"
+            className="md:text-4xl text-2xl md:m-4 m-2 p-1 bg-red-700 text-white rounded"
             onClick={pauseHandler}
           >
             <FaPause />
@@ -80,7 +80,7 @@ const TimerActions = ({
       </div>
       <div>
         <button
-          className="md:text-5xl text-2xl md:m-4 m-2 p-1 bg-yellow-700 text-white rounded"
+          className="md:text-4xl text-2xl md:m-4 m-2 p-1 bg-yellow-700 text-white rounded"
           onClick={resetTimer}
         >
           <GrPowerReset />
@@ -98,7 +98,7 @@ const TimerActions = ({
                 ref={daysRef}
                 value={days}
                 onChange={daysChangeHandler}
-                className="md:text-5xl text-2xl md:m-4 m-2 p-1 md:w-[150px] w-[75px]"
+                className="md:text-4xl text-2xl md:m-4 m-2 p-1 md:w-[150px] w-[75px]"
                 required
               />
               <input
@@ -109,7 +109,7 @@ const TimerActions = ({
                 ref={hoursRef}
                 value={hours}
                 onChange={hoursChangeHandler}
-                className="md:text-5xl text-2xl md:m-4 m-2 p-1 md:w-[150px] w-[75px]"
+                className="md:text-4xl text-2xl md:m-4 m-2 p-1 md:w-[150px] w-[75px]"
                 required
               />
               <input
@@ -120,7 +120,7 @@ const TimerActions = ({
                 ref={minutesRef}
                 value={minutes}
                 onChange={minutesChangeHandler}
-                className="md:text-5xl text-2xl md:m-4 m-2 p-1 md:w-[150px] w-[75px]"
+                className="md:text-4xl text-2xl md:m-4 m-2 p-1 md:w-[150px] w-[75px]"
                 required
               />
               <input
@@ -131,11 +131,11 @@ const TimerActions = ({
                 ref={secondsRef}
                 value={seconds}
                 onChange={secondsChangeHandler}
-                className="md:text-5xl text-2xl md:m-4 m-2 p-1 md:w-[150px] w-[75px]"
+                className="md:text-4xl text-2xl md:m-4 m-2 p-1 md:w-[150px] w-[75px]"
                 required
               />
               <button
-                className="md:text-5xl text-2xl md:m-4 m-2 p-1 bg-violet-700 text-white rounded"
+                className="md:text-4xl text-2xl md:m-4 m-2 p-1 bg-violet-700 text-white rounded"
                 type="submit"
               >
                 Set New Time
@@ -144,7 +144,7 @@ const TimerActions = ({
           </div>
         )}
         <button
-          className="md:text-5xl text-2xl md:m-4 m-2 p-1 bg-cyan-700 text-white rounded"
+          className="md:text-4xl text-2xl md:m-4 m-2 p-1 bg-cyan-700 text-white rounded"
           onClick={changeTimeLimitHandler}
         >
           {showTimeChanger ? "Cancel Time Change" : "Change Time Limit"}
