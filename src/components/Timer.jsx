@@ -106,10 +106,10 @@ const Timer = () => {
       <Progress
         progress={
           (1 -
-            (timerTime.days * 60 * 60 * 24 +
+            ((timerTime.days * 60 * 60 * 24 +
               timerTime.hours * 60 * 60 +
               timerTime.minutes * 60 +
-              timerTime.seconds / time)) *
+              timerTime.seconds) / time)) *
           100
         }
         size="sm"
